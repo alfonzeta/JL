@@ -27,30 +27,29 @@ public class ejercicio2parte2 {
 		System.out.println("Introduce la segunda cadena a comparar:");
 		cadena2=lectorScanner.nextLine();
 		
+		cadena1 = cadena1.toLowerCase();
+		cadena2 = cadena2.toLowerCase();
 		//Si cadena1 es más larga que cadena2 = exception in thread "main", por tanto, limito la cadena 2 al largo de la cadena 1.
 		
 		if (cadena1.length()>cadena2.length()) {
-			cadena1Igualada=(cadena1.substring(0,cadena2.length()));
-			cadena2Igualada=cadena2;
+			cadena1=(cadena1.substring(0,cadena2.length()));
 		} else if (cadena1.length()<cadena2.length()) {
-			cadena2Igualada=(cadena2.substring(0,cadena1.length()));
+			cadena2=(cadena2.substring(0,cadena1.length()));
 			cadena1Igualada=cadena1;
-		} else {
-			cadena1Igualada=cadena1;
-			cadena2Igualada=cadena2;
+
 		}
-		System.out.println(cadena1Igualada);
-		System.out.println(cadena2Igualada);
+		System.out.println(cadena1);
+		System.out.println(cadena2);
 		
-		for (int i = 0; i < cadena1Igualada.length(); i++) {
+		for (int i = 0; i < cadena1.length(); i++) {
 			
-			if (cadena1Igualada.charAt(i)==cadena2Igualada.charAt(i)&&cadena1Igualada.charAt(i)!=uno) {
+			if (cadena1.charAt(i)==cadena2.charAt(i)&&cadena1.charAt(i)!=uno) {
 				contador= contador +1;
-				System.out.printf("La posición %d de cadena1 es '%c', la posición %d de cadena2 es '%c'. Ambas letras coinciden.%n",i,cadena1Igualada.charAt(i),i,cadena2Igualada.charAt(i));
-			} else if (cadena1Igualada.charAt(i)==cadena2Igualada.charAt(i)&&cadena1Igualada.charAt(i)==uno) {
-				System.out.printf("La posición %d de cadena1 es '%c', la posición %d de cadena2 es '%c'. Los espacios no cuentan, por tanto ambas letras no coinciden.%n",i,cadena1Igualada.charAt(i),i,cadena2Igualada.charAt(i));
+				System.out.printf("La posición %d de cadena1 es '%c', la posición %d de cadena2 es '%c'. Ambas letras coinciden.%n",i,cadena1.charAt(i),i,cadena2.charAt(i));
+			} else if (cadena1.charAt(i)==cadena2.charAt(i)&&cadena1.charAt(i)==uno) {
+				System.out.printf("La posición %d de cadena1 es '%c', la posición %d de cadena2 es '%c'. Los espacios no cuentan, por tanto ambas letras no coinciden.%n",i,cadena1.charAt(i),i,cadena2.charAt(i));
 			} else {
-				System.out.printf("La posición %d de cadena1 es %c, la posición %d de cadena2 es '%c'. Ambas letras no coinciden.%n",i,cadena1Igualada.charAt(i),i,cadena2Igualada.charAt(i));
+				System.out.printf("La posición %d de cadena1 es %c, la posición %d de cadena2 es '%c'. Ambas letras no coinciden.%n",i,cadena1.charAt(i),i,cadena2.charAt(i));
 			}
 			
 			

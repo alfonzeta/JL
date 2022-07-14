@@ -12,37 +12,58 @@ public class ejercicio5 {
 		//Por ejemplo, pedirá la “o” y saldrá “*O** ****O”
 
 		String cadenaUsuario;
-		String cadenaOculta;
+		String cadenaOculta = "";
+		String cadenaResultado= "";
 		int contador = 0;
+		int contadorCadenaLength = 0;
 		char letra = ' ';
 		
 		Scanner lectorScanner = new Scanner (System.in);
 		System.out.println("Introduce una frase secreta:");
 		cadenaUsuario=lectorScanner.nextLine();
-		
-		
-		
-		System.out.println("La frase secreta es:");
-		cadenaOculta=cadenaUsuario;
+
+
 		for (int i = 0; i < cadenaUsuario.length(); i++) {
-			if (cadenaUsuario.charAt(i)==cadenaOculta.charAt(i)) {
-				cadenaOculta.replace(cadenaOculta.charAt(i), '*');
-			}
-			
+			if (cadenaUsuario.charAt(i)==' ') {
+				cadenaOculta += ' ';
+			}else {
+					cadenaOculta += '*';
+				}
+				
 		}
+		System.out.print("La frase secreta es: ");
+
 		System.err.println(cadenaOculta);
 		
-		System.out.printf("%nIntroduce una letra");
-		letra=lectorScanner.next().charAt(0);
-				
-		for (int i = 0; i < cadenaUsuario.length(); i++) {
-			if (letra==cadenaUsuario.charAt(i)) {
-				cadenaUsuario.replace(cadenaUsuario.charAt(i), letra);
-				System.out.println(cadenaUsuario);
-			}
+		cadenaResultado = cadenaOculta.substring(0,1)+"a"+cadenaOculta.substring(2,cadenaOculta.length());
+		System.err.print(cadenaResultado);
+		//cadenaOculta = cadenaUsuario.replace("h", "z");
+		//System.err.println(cadenaOculta);
+		
+		//SUBSTRINGS
+		//tolowercase
+		//touppercase
+		
+
+
+		do {
+			System.out.printf("%nIntroduce una letra");
+			letra=lectorScanner.next().charAt(0);
 			
+			for (int i = 0; i < cadenaUsuario.length(); i++) {
+				if (letra==cadenaUsuario.charAt(i)) {
+					cadenaResultado = cadenaOculta.substring(0,cadenaUsuario.indexOf(letra))+letra+cadenaOculta.substring(cadenaUsuario.indexOf(letra)+1,cadenaOculta.length());
+				}
+			}
+			System.out.println(cadenaResultado);
+		} while (cadenaResultado!=cadenaUsuario);
+		
+		
+
 		}
+
+
 		
 	}
 
-}
+

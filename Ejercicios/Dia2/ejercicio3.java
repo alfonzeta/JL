@@ -22,15 +22,27 @@ public class ejercicio3 {
 		
 		Scanner lectorScanner = new Scanner (System.in);
 		System.out.println("Introduce tu nombre:");
-		nombreyApellidos=lectorScanner.nextLine();
-		divisionNombreyApellidos=nombreyApellidos.indexOf(" ");
-
-		nombre = nombreyApellidos.substring(0,divisionNombreyApellidos);
-		apellidos = nombreyApellidos.substring(divisionNombreyApellidos+1,nombreyApellidos.length());
+		nombreyApellidos = lectorScanner.nextLine();
 		
-		System.out.println(nombre);
-		System.out.println(apellidos);
-		//System.out.println(nombreyApellidos.substring(0,));
+		if (nombreyApellidos.indexOf(" ")>=0) {
+			apellidos = nombreyApellidos.substring(nombreyApellidos.lastIndexOf(' ')+1,nombreyApellidos.length());
+			nombreyApellidos = nombreyApellidos.substring(0,nombreyApellidos.lastIndexOf(' '));
+			apellidos = nombreyApellidos.substring(nombreyApellidos.lastIndexOf(' ')+1,nombreyApellidos.length()) + " " + apellidos;
+			nombre = nombreyApellidos.substring(0,nombreyApellidos.lastIndexOf(' '));
+			//System.out.println(nombre);
+			System.out.println(nombre);
+			System.out.println(apellidos);
+		}else {
+			nombre = nombreyApellidos.substring(0,nombreyApellidos.length());
+			System.out.println(nombre);
+			}
+
+		//System.out.println(nombreyApellidos.substring(0,));	}
+	
+		
+				
+
 	}
+	
 
 }

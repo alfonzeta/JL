@@ -15,23 +15,20 @@ public class ejercicio2 {
 
 
 		String relatoString = "Hola me llamo Alfonso y soy el peor programador del mundo, saludos";
-		String letraBuscadaString;
-		String charPasaString;
-		String iPasaString;
+		Character letraBuscadaString;
 		int contador = 0;
 		int salidaBuscador = 0;
 		
-		System.out.println("Introduce la letra que quieres buscar, si deseas salir, escribe salir.");
+		System.out.println("Introduce la letra que quieres buscar, si deseas salir, escribe el caracter 'ç'.");
 		Scanner lectorScanner = new Scanner(System.in);
-		letraBuscadaString = lectorScanner.nextLine();
+		letraBuscadaString = lectorScanner.next().charAt(0);
 		
-		while (!letraBuscadaString.equals("salir")) {
+		while (!letraBuscadaString.equals('ç')) {
 			//En apuntes el salto de linea lo anoté como %n, me ha funcionado como \n			
 			if (relatoString.indexOf(letraBuscadaString) >= 0){
 				
 				for (int i = 0; i < relatoString.length(); i++) {
-					iPasaString= String.valueOf(relatoString.charAt(i));
-					if (iPasaString.equals(letraBuscadaString)) {
+					if (relatoString.charAt(i)==letraBuscadaString) {
 						contador=contador+1;
 				}
 				
@@ -45,8 +42,8 @@ public class ejercicio2 {
 			}
 			
 			
-			System.out.println("Introduce la letra que quieres buscar, si deseas salir, escribe salir.");
-			letraBuscadaString = lectorScanner.nextLine();
+			System.out.println("Introduce la letra que quieres buscar, si deseas salir, escribe el caracter 'ç'.");
+			letraBuscadaString = lectorScanner.next().charAt(0);
 
 		}
 		

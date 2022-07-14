@@ -6,24 +6,47 @@ public class ejercicio1_borrador {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		String cadena1;
-		String cadena2;
-		String cadena1LargodeCadena2;
+		String cadenaUsuario;
+		String cadenaOculta = "";
+		String cadenaResultado= "";
+		int contador = 0;
+		int contadorCadenaLength = 0;
+		char letra = ' ';
 		
 		Scanner lectorScanner = new Scanner (System.in);
-		System.out.println("Introduce la primera cadena a comparar:");
-		cadena1=lectorScanner.nextLine();
-		System.out.println("Introduce la segunda cadena a comparar:");
-		cadena2=lectorScanner.nextLine();
-		
-		//Si cadena1 es más larga que cadena2 = exception in thread "main", por tanto, limito la cadena 2 al largo de la cadena 1.
-		
-		cadena1LargodeCadena2=(cadena1.substring(0,cadena2.length()));
-		System.out.println(cadena1LargodeCadena2);
-		
-		//cadena1LargodeCadena2=(cadena2.substring(0,cadena1.length()));
-		//System.out.println(cadena1LargodeCadena2);
-		// TODO Auto-generated method stub
-	}
-}
+		System.out.println("Introduce una frase secreta:");
+		cadenaUsuario=lectorScanner.nextLine();
 
+
+		for (int i = 0; i < cadenaUsuario.length(); i++) {
+			if (cadenaUsuario.charAt(i)==' ') {
+				cadenaOculta += ' ';
+			}else {
+					cadenaOculta += '*';
+				}
+				
+			}
+		System.out.print("La frase secreta es: ");
+
+		System.err.print(cadenaOculta);
+		//cadenaOculta = cadenaUsuario.replace("h", "z");
+		//System.err.println(cadenaOculta);
+		
+		
+		
+		System.out.printf("%nIntroduce una letra");
+		letra = lectorScanner.next().charAt(0);
+		System.out.println(letra);
+
+			for (int i = 0; i < cadenaUsuario.length(); i++) {
+				if (letra==cadenaUsuario.charAt(i)) {
+					cadenaOculta = cadenaOculta.replace(cadenaOculta.charAt(i), letra);
+				}
+			}
+		
+			System.out.println(cadenaOculta);
+		}
+
+
+		
+	}

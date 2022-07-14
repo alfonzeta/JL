@@ -38,9 +38,9 @@ public class ejercicio4 {
 		posicionSeparadorMes=fecha.indexOf("/",posicionSeparadorDia+1);
 		//System.out.println(posicionSeparadorMes);
 		
-		day=fecha.substring(0,posicionSeparadorDia);
-		month=fecha.substring(posicionSeparadorDia+1,posicionSeparadorMes);
-		year=fecha.substring(posicionSeparadorMes+1);
+		day = fecha.substring(0,posicionSeparadorDia);
+		month = fecha.substring(posicionSeparadorDia+1,posicionSeparadorMes);
+		year = fecha.substring(posicionSeparadorMes+1);
 		
 		
 		
