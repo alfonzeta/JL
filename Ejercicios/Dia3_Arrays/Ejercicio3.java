@@ -42,8 +42,7 @@ public class Ejercicio3 {
 		for (int i = 0; i < vector.length; i++) {
 			if (vector[i] > numeroMayor) {
 				numeroMayor = vector[i];	
-			} 
-			if (vector[i] < numeroMenor) {
+			} else if (vector[i] < numeroMenor) {
 				numeroMenor = vector[i];
 			}
 		}
